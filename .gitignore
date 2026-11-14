@@ -1,0 +1,29 @@
+# --- Sistema operativo ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# --- Editores ---
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*~
+
+# --- Material que no es mío (derechos de autor) ---
+docs/enunciado.pdf
+docs/referencias/
+
+# --- Entregas comprimidas ---
+*.zip
+*.rar
+*.7z
+
+# --- Dependencias y herramientas (por si se usan) ---
+node_modules/
+.sass-cache/
+*.css.map
+*.log
+.env
