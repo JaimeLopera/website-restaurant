@@ -1,0 +1,258 @@
+/* ------------------------------------------------- */
+/* -------------------- RESTART -------------------- */
+/* ------------------------------------------------- */
+
+/* I coppied a professional restart to use in all my webpages */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6,
+p {
+    overflow-wrap: break-word;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ----------------------------------------------------------- */
+/* -------------------- CUSTOM PROPERTIES -------------------- */
+/* ----------------------------------------------------------- */
+
+:root{
+    --washi: #F5F1EA;
+    --sakura: #E6C8BC;
+    --sumi: #1C1B19;
+    --stone: #4F4B45;
+    --urushi: #9B2D24;
+    --gold: #C8A46B;
+    --font-title: 'Cormorant Garamond', 'Shippori Mincho', Georgia, serif;
+    --font-text: 'Zen Kaku Gothic New', system-ui, sans-serif;
+    --font-japanese: 'Shippori Mincho', 'Yu Mincho', serif;
+    --header-height: 80px;
+}
+
+/* ------------------------------------------------- */
+/* -------------------- GENERAL -------------------- */
+/* ------------------------------------------------- */
+
+body{
+    font-family: var(--font-text);
+}
+
+h1, h2, h3, h4{
+    font-family: var(--font-title);
+    font-weight: 500;
+}
+
+/* ---------------------------------------------------- */
+/* -------------------- NAVIGATION -------------------- */
+/* ---------------------------------------------------- */
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding: 20px clamp(2rem, -1.214rem + 8.571vw, 6.5rem);
+        height: var(--header-height);
+
+
+        .logo{
+            height: 25px;
+            width: 4.75rem;
+        }
+
+        .pages{
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: clamp(0.7rem, 0.629rem + 0.19vw, 0.8rem);
+            color: var(--washi);
+
+            .nav-button a{
+                display: inline-block;
+                background: var(--urushi);
+                padding: 0.5rem 1.2rem;
+                border-radius: 3px;
+            }
+
+            /* The arrow ">" allows us to just take the direct sons, in that way we dont take 
+            unwanted things (in this case we dont want to take nav-button). */
+            > a:hover,
+            > a:focus-visible,
+            > a[aria-current="page"]{
+                text-decoration: underline;
+                text-underline-offset: 0.4em;
+            }
+        }
+    }
+}
+
+/* ------------------------------------------------------ */
+/* -------------------- HOME SECTION -------------------- */
+/* ------------------------------------------------------ */
+
+
+/* -------------------- HERO -------------------- */
+
+.hero{
+    height: 100vh;
+    width: 100%;
+    margin-top: -80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--sumi);
+    background-image: linear-gradient(to bottom,
+        rgb(28 27 25 / 1)   0%,
+        rgb(28 27 25 / .1) 25%,
+        rgb(28 27 25 / .1) 50%,
+        rgb(28 27 25 / 1) 100%),
+        url(../img/restaurant/hero-counter-1920.jpg);
+
+        .hero-content{
+            width: 50%;
+            align-items: flex-start;
+            color: var(--washi);
+            margin-top: 15rem;
+            padding: 0 clamp(2rem, -1.214rem + 8.571vw, 6.5rem);
+
+            /* Entrance applied to every direct child */
+            > *{
+                animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+            }
+
+            h1{
+                font-size: clamp(6rem, 4.714rem + 3.429vw, 7.8rem);
+                line-height: 1.25;
+            }
+
+            h2{
+                font-size: clamp(2.1rem, 1.672rem + 1.142vw, 2.7rem);
+                font-style: italic;
+                font-weight: 300;
+                animation-delay: 0.15s;
+                text-wrap: nowrap;
+
+                .firefly{
+                    display: inline-block;
+                    height: .5rem;
+                    width: .5rem;
+                    border-radius: 50%;
+                    margin-left: 0.4em;
+                    background: var(--gold);
+                    box-shadow: 0 0 .4em 0.15em var(--gold);
+                    animation: blink 3s ease-in-out infinite;
+                }
+            }
+
+            p{
+                color: var(--gold);
+                font-size: clamp(0.72rem, 0.592rem + 0.343vw, 0.9rem);
+                text-transform: uppercase;
+                letter-spacing: .2rem;
+                animation-delay: 0.3s;
+            }
+
+            .hero-button {
+                margin-top: 2rem;
+                width: fit-content;
+                animation-delay: 0.45s;
+                
+                a{
+                    display: inline-flex;
+                    flex-direction: column;
+                    font-size: clamp(0.84rem, 0.797rem + 0.114vw, 0.9rem);
+                    transition: transform 0.3s ease;
+
+                    svg{
+                        width: 10em;
+                        height: auto;
+                        fill: none;
+                        stroke: var(--gold);
+                    }
+                }
+
+                &:hover a,
+                a:focus-visible{
+                    transform: translateX(1rem);
+                }
+            }
+        }
+}
+
+
+
+@keyframes blink{
+    0%, 100% { opacity: 1; }
+    50%      { opacity: .35; }
+}
+
+@keyframes rise{
+    from{
+        opacity: 0;
+        transform: translateY(1.25rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
