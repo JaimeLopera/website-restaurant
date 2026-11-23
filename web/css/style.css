@@ -74,11 +74,14 @@ table {
     --sumi: #1C1B19;
     --stone: #4F4B45;
     --urushi: #9B2D24;
+    --urushi-dark: #7A231C;
     --gold: #C8A46B;
     --font-title: 'Cormorant Garamond', 'Shippori Mincho', Georgia, serif;
     --font-text: 'Zen Kaku Gothic New', system-ui, sans-serif;
     --font-japanese: 'Shippori Mincho', 'Yu Mincho', serif;
     --header-height: 80px;
+    /* Side margin shared by nav, hero and sections (160px at 1920px, like the Figma) */
+    --side-padding: clamp(5rem, 1.667rem + 6.944vw, 10rem);
 }
 
 /* ------------------------------------------------- */
@@ -107,7 +110,7 @@ header{
         display: flex;
         justify-content: space-between;
         flex-wrap: nowrap;
-        padding: 20px clamp(2rem, -1.214rem + 8.571vw, 6.5rem);
+        padding: 20px var(--side-padding);
         height: var(--header-height);
 
 
@@ -128,6 +131,13 @@ header{
                 background: var(--urushi);
                 padding: 0.5rem 1.2rem;
                 border-radius: 3px;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+
+                &:hover,
+                &:focus-visible{
+                    background: var(--urushi-dark);
+                    transform: scale(1.04);
+                }
             }
 
             /* The arrow ">" allows us to just take the direct sons, in that way we dont take 
@@ -173,7 +183,7 @@ header{
             align-items: flex-start;
             color: var(--washi);
             margin-top: 15rem;
-            padding: 0 clamp(2rem, -1.214rem + 8.571vw, 6.5rem);
+            padding: 0 var(--side-padding);
 
             /* Entrance applied to every direct child */
             > *{
@@ -239,7 +249,52 @@ header{
         }
 }
 
+/* -------------------- INTRO -------------------- */
 
+.intro-section{
+    background: var(--sumi);
+
+    .intro{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        padding: 20rem var(--side-padding);
+        color: var(--washi);
+        border: red solid 1px;
+
+        .intro-text{
+            flex:3;
+            padding-top: 5rem;
+
+            .intro-eyebrow{
+                font-size: clamp(0.55rem, 0.336rem + 0.571vw, 0.85rem);
+                color: var(--gold);
+                text-transform: uppercase;
+                letter-spacing: 4px;
+            }
+
+            .intro-title{
+                font-size: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+                width: 40ch;
+            }
+
+            .intro-desc{
+                width: 67ch;
+            }
+        }
+
+        .intro-counter{
+            flex: 2;
+            padding-top: 5rem;
+        }
+
+        .intro-japanese{
+            flex:1;
+            writing-mode: vertical-lr;
+            color: var(--urushi);
+        }
+    }
+}
 
 @keyframes blink{
     0%, 100% { opacity: 1; }
