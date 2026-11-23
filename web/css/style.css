@@ -80,7 +80,6 @@ table {
     --font-text: 'Zen Kaku Gothic New', system-ui, sans-serif;
     --font-japanese: 'Shippori Mincho', 'Yu Mincho', serif;
     --header-height: 80px;
-    /* Side margin shared by nav, hero and sections (160px at 1920px, like the Figma) */
     --side-padding: clamp(5rem, 1.667rem + 6.944vw, 10rem);
 }
 
@@ -261,37 +260,47 @@ header{
         padding: 20rem var(--side-padding);
         color: var(--washi);
         border: red solid 1px;
+        gap: clamp(4rem, 3.286rem + 1.905vw, 5rem);
 
         .intro-text{
-            flex:3;
-            padding-top: 5rem;
+            flex:5;
+            padding-top: 6rem;
 
             .intro-eyebrow{
-                font-size: clamp(0.55rem, 0.336rem + 0.571vw, 0.85rem);
+                font-size: clamp(0.6rem, 0.314rem + 0.762vw, 1rem);
                 color: var(--gold);
                 text-transform: uppercase;
                 letter-spacing: 4px;
+                padding-bottom: 1rem;
             }
 
             .intro-title{
-                font-size: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
-                width: 40ch;
+                font-size: clamp(2rem, 1.643rem + 0.952vw, 2.5rem);
+                max-width: 39ch;
+                padding-bottom: 1rem;
             }
 
             .intro-desc{
-                width: 67ch;
+                max-width: 67ch;
             }
         }
 
-        .intro-counter{
-            flex: 2;
-            padding-top: 5rem;
+        .intro-features{
+            flex: 4;
+            padding-top: 6rem;
+
+            p{
+                font-size: clamp(2rem, 1.643rem + 0.952vw, 2.5rem);
+            }
         }
 
         .intro-japanese{
             flex:1;
             writing-mode: vertical-lr;
-            color: var(--urushi);
+            color: var(--gold);
+            font-size: 4rem;
+            letter-spacing: 2rem;
+            font-family: var(--font-japanese);
         }
     }
 }
