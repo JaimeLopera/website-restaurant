@@ -72,8 +72,10 @@ table {
     --washi: #F5F1EA;
     --sakura: #E6C8BC;
     --sumi: #1C1B19;
+    --line: #292929;
     --stone: #4F4B45;
     --urushi: #9B2D24;
+    --ligh-text:#c5c5c5;
     --urushi-dark: #7A231C;
     --gold: #C8A46B;
     --font-title: 'Cormorant Garamond', 'Shippori Mincho', Georgia, serif;
@@ -257,17 +259,16 @@ header{
         height: 100%;
         width: 100%;
         display: flex;
-        padding: 20rem var(--side-padding);
+        align-items: center;
+        padding: 15rem var(--side-padding);
         color: var(--washi);
-        border: red solid 1px;
         gap: clamp(4rem, 3.286rem + 1.905vw, 5rem);
 
         .intro-text{
             flex:5;
-            padding-top: 6rem;
 
             .intro-eyebrow{
-                font-size: clamp(0.6rem, 0.314rem + 0.762vw, 1rem);
+                font-size: clamp(0.6rem, 0.457rem + 0.381vw, 0.8rem);
                 color: var(--gold);
                 text-transform: uppercase;
                 letter-spacing: 4px;
@@ -275,32 +276,61 @@ header{
             }
 
             .intro-title{
-                font-size: clamp(2rem, 1.643rem + 0.952vw, 2.5rem);
+                font-size: clamp(2rem, 1.464rem + 1.429vw, 2.75rem);
+                font-weight: 300;
                 max-width: 39ch;
-                padding-bottom: 1rem;
+                padding-bottom: .75rem;
+                line-height: 3rem;
             }
 
             .intro-desc{
+                padding-top: 1.75rem;
                 max-width: 67ch;
+                line-height: 1.8;
+                font-size: clamp(0.8rem, 0.586rem + 0.571vw, 1.1rem);
+                font-weight: 300;
+                color: var(--ligh-text);
             }
         }
 
         .intro-features{
             flex: 4;
-            padding-top: 6rem;
 
             p{
-                font-size: clamp(2rem, 1.643rem + 0.952vw, 2.5rem);
+                display: flex;
+                align-items: baseline;
+                margin: 0;
+                padding: 2rem 0;
+                border-top: 1px solid var(--line);
+                font-size: clamp(0.7rem, 0.5rem + 0.5vw, 0.95rem);
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                color: var(--ligh-text);
+            }
+
+            p:last-child{
+                border-bottom: 1px solid var(--line);
+            }
+
+            .intro-number{
+                flex: 0 0 10rem;
+                font-family: "Cormorant Infant", serif;
+                font-weight: 500;
+                font-size: clamp(3rem, 2.286rem + 1.905vw, 4.5rem);
+                line-height: 1;
+                letter-spacing: 0;
+                color: white;
             }
         }
 
         .intro-japanese{
-            flex:1;
+            flex:none;
             writing-mode: vertical-lr;
             color: var(--gold);
             font-size: 4rem;
             letter-spacing: 2rem;
             font-family: var(--font-japanese);
+            line-height: 1;
         }
     }
 }
