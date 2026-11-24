@@ -260,7 +260,7 @@ header{
         width: 100%;
         display: flex;
         align-items: center;
-        padding: 15rem var(--side-padding);
+        padding: 12.5rem var(--side-padding);
         color: var(--washi);
         gap: clamp(4rem, 3.286rem + 1.905vw, 5rem);
 
@@ -334,6 +334,27 @@ header{
         }
     }
 }
+
+/* -------------------- OUR HISTORY -------------------- */
+
+.our-history{
+    background: var(--sumi);
+    padding: 0 var(--side-padding);
+
+    .our-history-title{
+        display: flex;
+        align-items: center;
+
+        h2{
+            color: var(--washi);
+        }
+
+        span{
+            color: var(--gold);
+        }
+    }
+}
+
 
 @keyframes blink{
     0%, 100% { opacity: 1; }
