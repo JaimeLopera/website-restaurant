@@ -16,6 +16,9 @@ $RECYCLE.BIN/
 docs/enunciado.pdf
 docs/referencias/
 
+# --- Material de apoyo solo en local ---
+docs/hotaru-logo.html
+
 # --- Entregas comprimidas ---
 *.zip
 *.rar
